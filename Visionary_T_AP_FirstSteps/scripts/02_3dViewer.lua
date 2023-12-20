@@ -1,20 +1,20 @@
 --[[----------------------------------------------------------------------------
 
   Application Name: 02_3dViewer
-                                                                                             
+
   Summary:
   Show the pointcloud that the camera acquired
-  
+
   Description:
   Set up the camera to take live images continuously. React to the "OnNewImage"
   event and show the pointcloud in an 3D viewer
-  
+
   How to run:
   First set this app as main (right-click -> "Set as main").
   Start by running the app (F5) or debugging (F7+F10).
   Set a breakpoint on the first row inside the main function to debug step-by-step.
   See the results in the different image viewer on the DevicePage.
-  
+
   More Information:
   See the tutorial Visionary-T AP FirstSteps
 
@@ -38,7 +38,8 @@ end
 --Registration of the 'main' function to the 'Engine.OnStarted' event
 Script.register('Engine.OnStarted', main)
 
---@handleOnNewImage(image:Image,sensordata:SensorData)
+---@param image Image
+---@param sensordata SensorData
 local function handleOnNewImage(image)
   -- Convert to point cloud, first argument is the distance image, second one is the intensity image
   local convert =
